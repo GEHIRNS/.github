@@ -24,16 +24,6 @@ How these were measured:
 
 The training-free first release, [**magi-1.0-4B**](https://huggingface.co/GEHIRNS/magi-1.0-4B) (magi-1.0 in the paper), keeps 96% of Qwen3.5-4B's score in 30% of the GPU memory with an 8-bit KV cache.
 
-## RAMIEL: text to CAD
-
-<p align="center"><img src="https://huggingface.co/GEHIRNS/ramiel-preview-1-1.9B/resolve/main/assets/headline.png" alt="ramiel-preview-1-1.9B: 99% of verified answers right (154 of 155; 155 of 200 untuned layout briefs verified); 63% valid sketches on new layouts, model alone; 2.0 GiB of GPU memory and 100 tokens per second on a consumer AMD GPU, with no gain over the base model" width="100%"></p>
-
-**[ramiel-preview-1-1.9B](https://huggingface.co/GEHIRNS/ramiel-preview-1-1.9B)** turns a one-sentence brief for a simple flat part into a fully constrained CAD sketch, then checks every number in the brief against it and builds the solid in FreeCAD. It is a preview: a Qwen3.5-2B fine-tune with 1,881,825,088 parameters, measured with its own protocols, so it is not in the capability-per-GiB table above.
-
-- **Results:** on 200 layout briefs no setting was tuned on, the pipeline answered `verified` for 155, and 154 of those were the right part. It fails on part types it has never seen (0 of 1,000 right on the two held-out families), and it has not been measured on briefs written by people.
-- **[GEHIRNS/ramiel](https://github.com/GEHIRNS/ramiel):** the pipeline code, the Windows installer, and the data behind every number, including every comparison the model loses.
-- **Collection:** [RAMIEL](https://huggingface.co/collections/GEHIRNS/ramiel-6afe6b30cc4d98fbaf7eadfd)
-
 ## Recipe and paper
 
 - **[GEHIRNS/magi](https://github.com/GEHIRNS/magi):** the build recipe, the importance matrix, and the data behind every table and figure in the paper.
